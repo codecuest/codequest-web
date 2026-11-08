@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>CodeQuest · Aprende a programar jugando</title>
+  <meta name="description" content="CodeQuest es una app para Android con lecciones, retos y partidas para aprender HTML, CSS, JavaScript y Python. Descarga el APK.">
+  <meta name="theme-color" content="#0d1427">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="CodeQuest · Aprende a programar jugando">
+  <meta property="og:description" content="Lecciones, retos y partidas para aprender HTML, CSS, JavaScript y Python.">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;800&family=Figtree:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap">
+  <link rel="stylesheet" href="css/main.css">
+  <script type="module" src="js/main.js"></script>
+</head>
+<body>
+  <a class="skip" href="#contenido">Saltar al contenido</a>
+
+  <div class="wrap">
+    <header class="top">
+      <a class="brand" href="./" aria-label="CodeQuest, inicio">Code<span>Quest</span></a>
+      <nav aria-label="Principal" class="top__nav">
+        <a href="#funciones">Funciones</a>
+        <a href="#niveles">Niveles</a>
+        <a class="mini" href="#descargar">Descargar</a>
+      </nav>
+    </header>
+
+    <main id="contenido">
+      <div class="hero">
+        <div>
+          <p class="eyebrow">App para Android</p>
+          <h1>Aprende a programar <em>subiendo de nivel</em></h1>
+          <p class="lead">CodeQuest te enseña HTML, CSS, JavaScript y Python con lecciones, retos y partidas de preguntas. Ganas XP, guardas tus récords y eliges la dificultad que va con tu nivel.</p>
+          <div class="cta-row">
+            <a class="btn" data-download href="#descargar">Descargar para Android</a>
+            <span class="meta">APK · instalación directa</span>
+          </div>
+        </div>
+
+        <div class="phone-wrap">
+          <div class="phone" aria-label="Ejemplo de pregunta de CodeQuest">
+            <div class="bar"><span>Partida</span><span id="xp-label">XP 40</span></div>
+            <div class="xpbar"><i id="xp-fill"></i></div>
+            <div class="lang">HTML · Principiante</div>
+            <p class="q">¿Qué etiqueta crea un enlace a otra página?</p>
+            <div class="opts" id="opts">
+              <button class="opt" type="button" data-correct>&lt;a&gt;</button>
+              <button class="opt" type="button">&lt;link&gt;</button>
+              <button class="opt" type="button">&lt;href&gt;</button>
+              <button class="opt" type="button">&lt;url&gt;</button>
+            </div>
+            <p class="fb" id="fb" aria-live="polite"></p>
+            <p class="hint-demo">Prueba la pregunta, así se juega.</p>
+          </div>
+        </div>
+      </div>
+
+      <section class="band" id="lenguajes">
+        <h2>Cuatro lenguajes, un solo lugar</h2>
+        <p class="sub">Cada lenguaje tiene su propio avance de lecciones, sus retos y sus récords.</p>
+        <div class="langs">
+          <div><code>HTML</code><p>La estructura de cualquier página web.</p></div>
+          <div><code>CSS</code><p>Colores, tamaños y diseño de lo que se ve.</p></div>
+          <div><code>JavaScript</code><p>Lo que hace que una página reaccione.</p></div>
+          <div><code>Python</code><p>Un lenguaje claro para empezar a programar.</p></div>
+        </div>
+      </section>
+
+      <section class="band" id="funciones">
+        <h2>Qué puedes hacer en la app</h2>
+        <div class="feat">
+          <div><h3>Lecciones</h3><p>Avanza lenguaje por lenguaje y suma XP al completar cada una.</p></div>
+          <div><h3>Retos</h3><p>Practica con ejercicios y marca los que ya resolviste.</p></div>
+          <div><h3>Partidas</h3><p>Responde preguntas con tiempo y supera tu mejor puntaje.</p></div>
+          <div><h3>Récords separados</h3><p>Cada combinación de lenguaje y dificultad guarda su propio récord.</p></div>
+          <div><h3>Perfil</h3><p>Consulta tu nivel, tu dificultad actual y tu progreso en un solo lugar.</p></div>
+          <div><h3>Progreso en tu teléfono</h3><p>Tus datos se guardan en el dispositivo. Cambiar de dificultad no los borra.</p></div>
+        </div>
+      </section>
+
+      <section class="band" id="niveles">
+        <h2>Elige tu dificultad y cámbiala cuando quieras</h2>
+        <p class="sub">Desde el Perfil puedes pasar de un nivel a otro con el botón “Cambiar nivel de dificultad”. Tu XP, tus lecciones completadas y tus récords se conservan.</p>
+        <div class="levels">
+          <div class="lv"><span class="tag on">Disponible</span><h3>Principiante</h3><p>Para dar los primeros pasos con cada lenguaje.</p></div>
+          <div class="lv"><span class="tag soon">En preparación</span><h3>Intermedio</h3><p>Preguntas y retos propios de este nivel para HTML, CSS, JavaScript y Python.</p></div>
+          <div class="lv"><span class="tag soon">En preparación</span><h3>Profesional</h3><p>Contenido más exigente, con su propio récord por lenguaje.</p></div>
+        </div>
+        <p class="note">Fase 2 de CodeQuest: la selección y el cambio de dificultad ya están en la app. El contenido específico de Intermedio y Profesional se está integrando.</p>
+      </section>
+
+      <section class="band" id="descargar">
+        <h2>Descarga CodeQuest</h2>
+        <p class="sub">Versión de prueba para Android (archivo APK).</p>
+        <div class="cta-row">
+          <a class="btn" id="download-main" data-download href="#descargar">Descargar APK</a>
+          <span class="meta" id="download-status"></span>
+        </div>
+        <ol class="steps">
+          <li><div><b>Descarga el archivo</b><span>Toca el botón desde tu teléfono Android.</span></div></li>
+          <li><div><b>Permite la instalación</b><span>Si Android lo pide, autoriza instalar apps desde tu navegador o gestor de archivos.</span></div></li>
+          <li><div><b>Abre el APK e instala</b><span>Pulsa Instalar y luego Abrir. Elige tu nivel y empieza.</span></div></li>
+        </ol>
+      </section>
+    </main>
+
+    <footer>
+      <span>CodeQuest · Proyecto de aprendizaje de programación</span>
+      <span>Hecha con Ionic y Angular</span>
+    </footer>
+  </div>
+</body>
+</html>

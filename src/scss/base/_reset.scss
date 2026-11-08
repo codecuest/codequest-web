@@ -1,0 +1,31 @@
+@use "../abstracts" as *;
+
+:root { color-scheme: dark; }
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: $bg;
+  color: $fg;
+  font-family: $font-body;
+  font-size: 17px;
+  line-height: 1.6;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+
+a { color: $link; }
+p { margin: 0; }
+:focus-visible { outline: 3px solid $xp; outline-offset: 3px; }
+
+.wrap { max-width: $max-width; margin: 0 auto; }
+
+.skip {
+  position: absolute; left: -9999px; top: 8px; z-index: 10;
+  background: $xp; color: $xp-ink; padding: 10px 16px; border-radius: 8px; font-weight: 600;
+  &:focus { left: 16px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; }
+}

@@ -1,0 +1,15 @@
+@use "../abstracts" as *;
+
+.steps {
+  counter-reset: s; display: grid; gap: 14px; margin-top: 32px; padding: 0; list-style: none; max-width: 640px;
+  li {
+    counter-increment: s; display: grid; grid-template-columns: 40px 1fr; gap: 14px; align-items: start;
+    &::before {
+      content: counter(s); font-family: $font-display; font-weight: 700; color: $xp-ink; background: $xp;
+      width: 36px; height: 36px; border-radius: 10px; display: grid; place-items: center;
+    }
+    > div { padding-top: 5px; min-width: 0; }
+    b { display: block; }
+    span { color: $muted; font-size: 15.5px; }
+  }
+}

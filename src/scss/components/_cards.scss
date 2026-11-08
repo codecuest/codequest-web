@@ -1,0 +1,35 @@
+@use "../abstracts" as *;
+
+.langs {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 36px;
+  > div { border: 1px solid $line; border-radius: 14px; padding: 20px 18px; background: $bg-2; min-width: 0; }
+  code { font-family: $font-mono; font-size: 22px; font-weight: 600; color: $xp; display: block; margin-bottom: 8px; }
+  p { font-size: 15px; color: $muted; }
+  @include tablet { grid-template-columns: repeat(2, 1fr); }
+}
+
+.feat {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 36px 32px; margin-top: 40px;
+  > div { min-width: 0; }
+  h3 { font-size: 17px; font-weight: 700; margin-bottom: 8px; }
+  p { color: $muted; font-size: 16px; }
+  @include tablet { grid-template-columns: 1fr; }
+}
+
+.levels {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 36px;
+  @include tablet { grid-template-columns: 1fr; }
+}
+
+.lv {
+  background: $surface; border: 1px solid $line; border-radius: 16px; padding: 24px; min-width: 0;
+  display: flex; flex-direction: column; gap: 10px;
+  h3 { font-size: 20px; }
+  p { color: $muted; font-size: 15.5px; }
+  .tag {
+    font-family: $font-mono; font-size: 12px; letter-spacing: .06em; text-transform: uppercase;
+    align-self: flex-start; padding: 4px 10px; border-radius: 99px; border: 1px solid $line; color: $muted;
+    &.on { color: $ok; border-color: $ok; }
+    &.soon { color: $xp; border-color: $xp; }
+  }
+}

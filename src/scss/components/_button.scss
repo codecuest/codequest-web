@@ -1,0 +1,17 @@
+@use "../abstracts" as *;
+
+.btn {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-family: $font-display; font-weight: 700; font-size: 16px;
+  background: $xp; color: $xp-ink;
+  padding: 16px 26px; border-radius: 12px; border: 0; text-decoration: none; cursor: pointer;
+  box-shadow: 0 4px 0 $xp-shadow; transition: transform .12s, box-shadow .12s;
+
+  &:hover { transform: translateY(2px); box-shadow: 0 2px 0 $xp-shadow; }
+  &:active { transform: translateY(4px); box-shadow: 0 0 0 $xp-shadow; }
+
+  &[aria-disabled="true"] {
+    background: $surface; color: $muted; box-shadow: 0 4px 0 $line; cursor: not-allowed;
+    &:hover { transform: none; box-shadow: 0 4px 0 $line; }
+  }
+}

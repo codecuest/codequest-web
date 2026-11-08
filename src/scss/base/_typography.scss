@@ -1,0 +1,12 @@
+@use "../abstracts" as *;
+
+h1, h2, h3 { font-family: $font-display; line-height: 1.12; text-wrap: balance; margin: 0; }
+
+.eyebrow {
+  font-family: $font-mono; font-size: 13px; letter-spacing: 0.08em;
+  text-transform: uppercase; color: $xp; margin-bottom: 18px;
+}
+.lead { color: $muted; font-size: 19px; max-width: 52ch; margin-top: 22px; }
+.sub { color: $muted; max-width: 60ch; margin-top: 14px; }
+.meta { font-family: $font-mono; font-size: 13px; color: $muted; }
+.note { margin-top: 22px; font-size: 15px; color: $muted; max-width: 70ch; }

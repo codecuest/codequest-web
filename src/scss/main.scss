@@ -1,0 +1,11 @@
+// Punto de entrada. Compila a dist/css/main.css
+@use "base/reset";
+@use "base/typography";
+@use "layout/header";
+@use "layout/hero";
+@use "layout/section";
+@use "layout/footer";
+@use "components/button";
+@use "components/phone";
+@use "components/cards";
+@use "components/steps";

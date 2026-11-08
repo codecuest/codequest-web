@@ -1,0 +1,20 @@
+{
+  "name": "codequest-web",
+  "version": "1.0.0",
+  "description": "Página de presentación y descarga de CodeQuest",
+  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "engines": { "node": ">=18" },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "watch": "node scripts/build.mjs --watch",
+    "serve": "serve dist -l 5173",
+    "dev": "npm run build && concurrently -k \"npm:watch\" \"npm:serve\""
+  },
+  "devDependencies": {
+    "concurrently": "^9.0.0",
+    "sass": "^1.77.0",
+    "serve": "^14.2.0"
+  }
+}

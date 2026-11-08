@@ -1,0 +1,6 @@
+@use "../abstracts" as *;
+
+footer {
+  border-top: 1px solid $line; padding-block: 32px 48px; color: $muted; font-size: 14px;
+  display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: space-between;
+}
