@@ -1,18 +1,21 @@
-// Configuración de la página. Edita solo este archivo para publicar una versión nueva.
+// Configuración de la página.
 export const config = {
-  // Tu usuario y repositorio de GitHub (donde subes el APK en "Releases").
   githubUser: "codecuest",
   githubRepo: "codequest-web",
-  // Nombre exacto del archivo adjunto en la release. Debe ser siempre el mismo.
-  apkFileName: "app-debug.apk",
 };
 
 export function isConfigured() {
   return config.githubUser !== "TU-USUARIO";
 }
 
-// El enlace "latest" apunta siempre a la release más reciente, sin tocar el código.
-export function apkUrl() {
-  const { githubUser, githubRepo, apkFileName } = config;
-  return `https://github.com/${githubUser}/${githubRepo}/releases/latest/download/${apkFileName}`;
+// Página de la última versión (sirve de respaldo).
+export function releasesPage() {
+  const { githubUser, githubRepo } = config;
+  return `https://github.com/${githubUser}/${githubRepo}/releases/latest`;
+}
+
+// API que devuelve los archivos de la última versión.
+export function latestApiUrl() {
+  const { githubUser, githubRepo } = config;
+  return `https://api.github.com/repos/${githubUser}/${githubRepo}/releases/latest`;
 }
