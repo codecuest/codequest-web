@@ -2,7 +2,7 @@
 export const config = {
   // Tu usuario y repositorio de GitHub (donde subes el APK en "Releases").
   githubUser: "codecuest",
-  githubRepo: "codequest",
+  githubRepo: "codequest-web",
   // Nombre exacto del archivo adjunto en la release. Debe ser siempre el mismo.
   apkFileName: "app-debug.apk",
 };
