@@ -1,7 +1,30 @@
-import { isConfigured, latestApiUrl, releasesPage } from "./config.js";
+import { historyUrl, isConfigured, releasesApi, releasesPage } from "./config.js";
+import { totalDownloads } from "./history.js";
+
+const numberFormat = new Intl.NumberFormat("es-MX");
+
+const isApk = (asset) => asset.name.toLowerCase().endsWith(".apk");
 
 function formatSize(bytes) {
   return `${(bytes / 1024 / 1024).toFixed(1)} MB`;
+}
+
+function formatDate(iso) {
+  return new Date(iso).toLocaleDateString("es-MX", { day: "numeric", month: "long", year: "numeric" });
+}
+
+async function loadHistory() {
+  try {
+    const res = await fetch(historyUrl());
+    return res.ok ? await res.json() : null;
+  } catch {
+    return null;
+  }
+}
+
+function setText(id, text) {
+  const el = document.getElementById(id);
+  if (el) el.textContent = text;
 }
 
 export async function initDownload() {
@@ -26,14 +49,26 @@ export async function initDownload() {
   });
 
   try {
-    const res = await fetch(latestApiUrl(), { headers: { Accept: "application/vnd.github+json" } });
+    const [res, history] = await Promise.all([
+      fetch(releasesApi(), { headers: { Accept: "application/vnd.github+json" } }),
+      loadHistory(),
+    ]);
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
-    const release = await res.json();
-    const apk = (release.assets || []).find((a) => a.name.toLowerCase().endsWith(".apk"));
+
+    const releases = (await res.json()).filter((r) => !r.draft);
+    const latest = releases.find((r) => !r.prerelease);
+    const apk = latest && (latest.assets || []).find(isApk);
     if (!apk) throw new Error("Sin APK en la release");
+
+    const total = totalDownloads(history, releases);
 
     buttons.forEach((btn) => { btn.href = apk.browser_download_url; });
     if (status) status.textContent = `${apk.name} · ${formatSize(apk.size)}`;
+
+    setText("spec-version", latest.tag_name.replace(/^v/i, ""));
+    setText("spec-total", numberFormat.format(total));
+    setText("spec-size", formatSize(apk.size));
+    setText("spec-date", formatDate(latest.published_at));
   } catch {
     if (status) status.textContent = "Se abrirá la página de la versión más reciente.";
   }

@@ -11,10 +11,14 @@
   &__nav {
     display: flex; align-items: center; gap: 22px;
     a { color: $muted; text-decoration: none; font-size: 15px; font-weight: 500; &:hover { color: $fg; } }
-    @include tablet { a:not(.mini) { display: none; } }
+    @include tablet { a { display: none; } }
   }
-  a.mini {
-    color: $fg; font-weight: 600; border: 1px solid $line; padding: 8px 14px; border-radius: 8px;
-    &:hover { border-color: $xp; }
+  // Botón que abre la ficha de la app. Solo se ve en pantallas pequeñas.
+  &__toggle {
+    display: none;
+    font-family: $font-body; font-size: 15px; font-weight: 600; color: $fg;
+    background: transparent; border: 1px solid $line; border-radius: 8px; padding: 8px 14px; cursor: pointer;
+    &:hover, &[aria-expanded="true"] { border-color: $xp; }
+    @include tablet { display: inline-flex; }
   }
 }

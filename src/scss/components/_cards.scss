@@ -2,9 +2,9 @@
 
 .langs {
   display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 36px;
-  > div { border: 1px solid $line; border-radius: 14px; padding: 20px 18px; background: $bg-2; min-width: 0; }
-  code { font-family: $font-mono; font-size: 22px; font-weight: 600; color: $xp; display: block; margin-bottom: 8px; }
-  p { font-size: 15px; color: $muted; }
+  > div { background: $ivory; color: $ink; border-radius: 14px; padding: 20px 18px; min-width: 0; }
+  code { font-family: $font-mono; font-size: 22px; font-weight: 600; color: $blue; display: block; margin-bottom: 8px; }
+  p { font-size: 15px; color: $ink-muted; }
   @include tablet { grid-template-columns: repeat(2, 1fr); }
 }
 
@@ -22,14 +22,14 @@
 }
 
 .lv {
-  background: $surface; border: 1px solid $line; border-radius: 16px; padding: 24px; min-width: 0;
+  background: $ivory; color: $ink; border-radius: 16px; padding: 24px; min-width: 0;
   display: flex; flex-direction: column; gap: 10px;
   h3 { font-size: 20px; }
-  p { color: $muted; font-size: 15.5px; }
+  p { color: $ink-muted; font-size: 15.5px; }
   .tag {
-    font-family: $font-mono; font-size: 12px; letter-spacing: .06em; text-transform: uppercase;
-    align-self: flex-start; padding: 4px 10px; border-radius: 99px; border: 1px solid $line; color: $muted;
-    &.on { color: $ok; border-color: $ok; }
-    &.soon { color: $xp; border-color: $xp; }
+    font-family: $font-mono; font-size: 12px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase;
+    align-self: flex-start; padding: 4px 10px; border-radius: 99px;
+    &.on { background: $blue; color: $ivory; }
+    &.soon { background: $lemon; color: $ink; }
   }
 }

@@ -1,16 +1,29 @@
-// Paleta
-$bg: #0d1427;
-$bg-2: #131c36;
-$surface: #18223f;
-$line: #27345c;
-$fg: #eaf0ff;
-$muted: #9aa8cf;
-$xp: #ffb547;
-$xp-ink: #2a1a00;
-$xp-shadow: #b9741a;
-$link: #62b4ff;
-$ok: #46d39a;
-$bad: #ff7a7a;
+// Paleta · regla 60 / 30 / 10
+$blue: #3d4fbb;        // 60% · Majorelle blue (fondo)
+$ivory: #eee9de;       // 30% · Pebble ivory (tarjetas y texto)
+$lemon: #ffe11a;       // 10% · Lemon spark (acentos)
+
+// Derivados
+$blue-deep: #2f3d96;   // azul más oscuro para elementos sobre el fondo
+$ink: #141a4a;         // texto sobre marfil
+$ink-muted: #4b5287;   // texto secundario sobre marfil
+$ivory-line: #d3ccb9;  // bordes sobre marfil
+
+// Nombres usados por los componentes sobre el fondo azul
+$bg: $blue;
+$fg: $ivory;
+$muted: #d6d5de;
+$line: #6471c0;
+$xp: $lemon;
+$xp-ink: $ink;
+$xp-shadow: $ink;
+$link: $ivory;
+
+// Estados
+$ok: #1f9d63;
+$ok-soft: #dff3e8;
+$bad: #d64545;
+$bad-soft: #f9dede;
 
 // Tipografía
 $font-display: "Unbounded", "Trebuchet MS", sans-serif;
@@ -18,5 +31,5 @@ $font-body: "Figtree", system-ui, -apple-system, "Segoe UI", sans-serif;
 $font-mono: "JetBrains Mono", ui-monospace, Menlo, Consolas, monospace;
 
 // Layout
-$max-width: 1080px;
+$max-width: 1180px;
 $bp-tablet: 860px;

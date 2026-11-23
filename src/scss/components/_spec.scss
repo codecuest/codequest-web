@@ -1,0 +1,35 @@
+@use "../abstracts" as *;
+
+// Layout de dos columnas: ficha a la izquierda, contenido a la derecha.
+.page {
+  display: grid; grid-template-columns: 260px minmax(0, 1fr); gap: 48px; align-items: start;
+  @include tablet { grid-template-columns: 1fr; gap: 8px; }
+}
+
+.spec {
+  position: sticky; top: 24px;
+  background: $ivory; color: $ink; border-radius: 16px; padding: 22px 20px;
+  // En pantallas pequeñas se oculta y se abre con el botón de la barra superior.
+  @include tablet {
+    position: static; display: none;
+    &.is-open { display: block; }
+  }
+
+  &__title {
+    font-family: $font-mono; font-size: 12px; letter-spacing: .08em; text-transform: uppercase;
+    color: $blue; font-weight: 600; margin-bottom: 16px;
+  }
+  &__list {
+    margin: 0; display: grid; gap: 14px;
+    @include tablet { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+  &__item {
+    min-width: 0;
+    dt { font-size: 13px; color: $ink-muted; }
+    dd { margin: 2px 0 0; font-size: 15px; font-weight: 500; overflow-wrap: anywhere; }
+    &--big dd {
+      font-family: $font-display; font-weight: 700; font-size: 26px; letter-spacing: -0.01em;
+      font-variant-numeric: tabular-nums; color: $blue;
+    }
+  }
+}
