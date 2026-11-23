@@ -1,11 +1,11 @@
 {
-  "total": 2,
+  "total": 5,
   "assets": {
     "v0.3.0/codequest-0.3.0.apk": {
       "tag": "v0.3.0",
       "name": "codequest-0.3.0.apk",
       "base": 0,
-      "last": 2
+      "last": 5
     }
   }
 }
